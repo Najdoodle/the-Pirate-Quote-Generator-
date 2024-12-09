@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate Quote Generator</title>
+    <style>
+        body {
+            background-color: #4e3629;
+            font-family: 'Pirata One', cursive;
+            color: #f1e3d3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 50px 80px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            max-width: 700px;
+            text-align: center;
+            width: 90%;
+            transition: transform 0.3s ease;}
+        .container:hover {
+            transform: scale(1.05);}
+        h1 {
+            font-size: 60px;
+            color: #d4af7f;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px;
+            font-family: 'Rock Salt', cursive;
+            letter-spacing: 2px;}
+        #quote {
+            font-size: 32px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #f5f5f5;
+            padding: 35px 50px;
+            border-radius: 15px;
+            border: 3px solid #b08d57;
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            margin-bottom: 50px;
+            max-width: 90%;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards;
+            transition: opacity 0.5s ease-out; }
+        button {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            padding: 20px 50px;
+            border-radius: 25px;
+            background-color: #6e4e3f;
+            color: #f5f5f5;
+            border: 2px solid #b08d57;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;}
+        button:hover {
+            background-color: #5a3c2e; 
+            transform: scale(1.05);}
+        button:active {
+            transform: scale(1); }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; }
+            100% {
+                opacity: 1; } }
+        @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Pirata+One&family=Cinzel&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-family: serif;">Pirate Quote Generator</h1>
+        <div id="quote">"Arrr! A pirate's life for me!"</div>
+        <button onclick="generateQuote()">Get Pirate Quote!</button>
+    </div>
+    <script>
+        const quotes = [
+            "Arrr! A pirate's life for me!",
+            "Dead men tell no tales!",
+            "Yo ho ho and a bottle of rum!",
+            "Shiver me timbers, we’re going to plunder!",
+            "Weigh anchor, hoist the sails!",
+            "Not all treasure is silver and gold, mate.",
+            "I'll be back on the tide, lads!",
+            "The sea calls to me, but treasure calls louder!",
+            "I’m a pirate, I don’t take orders!",
+            "Aye, ye better watch yer back, matey!",
+            "The black flag flies for freedom!",
+            "To the ship! We sail to glory and riches!",
+            "Plunder and booty, aye, that’s the pirate’s way!",
+            "Arrr, I be no landlubber!",
+            "Beware the Kraken, ye scallywags!" ];
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            const quoteElement = document.getElementById('quote');
+            quoteElement.textContent = randomQuote;
+            quoteElement.style.animation = 'none';
+            quoteElement.offsetHeight;
+            quoteElement.style.animation = 'fadeIn 3s ease-out forwards';  }
+    </script>
+</body>
+</html>
